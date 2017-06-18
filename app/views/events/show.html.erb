@@ -1,0 +1,10 @@
+<h1><%= @event.name %></h1>
+<h5>Last Updated: <%= @event.updated_at %></h5>
+<h2>Event Description: <%= @event.description %></h2>
+<h2>Event Start Time: <%= @event.start_time %></h2>
+<h2>Event End Time: <%= @event.end_time %></h2>
+<br> 
+<h2>Test</h2>
+
+<%= link_to "Edit", "/events/#{@event.id}/edit" %>
+<%= link_to "Delete", "/events/#{@event.id}", method: :delete %>

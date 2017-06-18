@@ -1,0 +1,6 @@
+<h1><%= @visitor.name %></h1>
+<h5>Name: <%= @visitor.name %></h5>
+<h2>E-mail: <%= @visitor.email %></h2>
+<h2>Phone: <%= @visitor.phone %></h2>
+<%= link_to "Edit", "/visitors/#{@visitor.id}/edit" %>
+<%= link_to "Delete", "/visitors/#{@visitor.id}", method: :delete %>

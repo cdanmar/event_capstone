@@ -1,0 +1,8 @@
+<h1>Your events</h1>
+<% @events.each do |event| %>
+  <div>
+    <h2><%= link_to "#{event.name}", "/events/#{event.id}" %></h2>
+    <h3>Event start: <%= event.start_time %></h3>
+    <h3>Event finishes: <%= event.end_time %></h3>
+  </div>
+<% end %>
