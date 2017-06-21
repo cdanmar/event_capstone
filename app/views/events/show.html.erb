@@ -5,6 +5,14 @@
 <h2>Event End Time: <%= @event.end_time %></h2>
 <br> 
 <h2>Test</h2>
+<%= form_tag '/participants', method: :post do %>
+    <div class="form-group">
+      Select Visitor to add them: <%= collection_select :visitor, :visitor_id, Visitor.all, :id, :name, {}, class: "form-control" %>
+    </div>
+  <input type="submit" value="Add Visitor">
+<% end %>
+
+
 
 <%= link_to "Edit", "/events/#{@event.id}/edit" %>
 <%= link_to "Delete", "/events/#{@event.id}", method: :delete %>

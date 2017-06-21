@@ -26,6 +26,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'rails_bootstrap_navbar'
 gem 'bootstrap_form'
 gem 'seed_dump'
+gem 'simple_form'
 
 
 # Use CoffeeScript for .coffee assets and views

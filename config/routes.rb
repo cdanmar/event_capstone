@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   delete '/events/:id' => 'events#destroy'
 
   get '/participants/index' => 'participants#index'
-  get '/participants/' => 'participants#new'
-  get '/participants' => 'participants#create'
-
-  get '/participants' => 'participants#destroy'
-
+  get '/participants/new' => 'participants#new'
+  post '/participants' => 'participants#create'
+  get '/participants/:id' => 'participants#show'
+  
+  delete '/participants' => 'participants#destroy'
   get '/participants' => 'participants#check_in'
+  get '/participants' => 'participants#check_out'
 
   get '/visitors/' => 'visitors#index'
   get '/visitors/new' => 'visitors#new'

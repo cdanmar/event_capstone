@@ -17,7 +17,7 @@ class VisitorsController < ApplicationController
     @visitor = Visitor.new(visitor_params)
 
     if @visitor.save
-      redirect_to @visitor.id
+      redirect_to "/visitor/#{@visitor.id}"
     else
       render 'new'
     end
