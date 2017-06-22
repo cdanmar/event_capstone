@@ -10,13 +10,22 @@ class ParticipantsController < ApplicationController
   end
 
   def create
-    @listed_participant = ListedParticipant.new(participant_params)
+    # @listed_participant = ListedParticipant.new(participant_params)
+    @listed_participant = ListedParticipant.new(visitor_id: params[:visitor_id], event_id: params[:event_id])
+    # @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event]["event_id"])
 
-    @listed_participant.save
+    p "QQQQQQQQQQQQQQQQQQ"
+    p params[:visitor]
 
-    # if @listed_participant.save
-    #   redirect_to "/participants/index"
-    # end
+    p "WWWWWWWWWWWWWWWWWW"
+    p params[:event_id]
+
+    if @listed_participant.save!
+      redirect_to "/participants/index"
+    else
+      @listed_participant.errors.full_messages
+      redirect_to "/participants/index"
+    end
 
   end
 
@@ -32,8 +41,8 @@ class ParticipantsController < ApplicationController
 
   end
 
-private
-  def participant_params
-    params.require(:visitor).permit(:visitor_id)
-  end
+# private
+#   def participant_params
+#     params.require(:visitor).permit(:visitor_id)
+#   end
 end

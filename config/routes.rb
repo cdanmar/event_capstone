@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/participants/new' => 'participants#new'
   post '/participants' => 'participants#create'
   get '/participants/:id' => 'participants#show'
-  
   delete '/participants' => 'participants#destroy'
   get '/participants' => 'participants#check_in'
   get '/participants' => 'participants#check_out'

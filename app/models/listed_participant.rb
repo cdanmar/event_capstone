@@ -1,4 +1,4 @@
 class ListedParticipant < ApplicationRecord
-  belongs_to :visitors
-  belongs_to :events
+  belongs_to :visitor
+  belongs_to :event
 end
