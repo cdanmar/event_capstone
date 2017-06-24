@@ -30,13 +30,15 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find_by(id: params[:id])
-    event.assign_attributes(event_params)
-
-    if @event.save
-      redirect_to @event
-    else
-      render '/events'
-    end
+    event.assign_attributes(name: params[:name], description: params[:description], start_time: params[:start_time], end_time: params[:end_time])
+    event.save
+    flash[:success] = "Event Updated"
+    redirect_to "/events/#{event.id}"
+    # if @event.save!
+    #   redirect_to @event
+    # else
+    #   render '/events'
+    # end
   end
 
   def destroy
@@ -49,5 +51,9 @@ class EventsController < ApplicationController
 private
   def event_params
     params.require(:event).permit(:name, :description, :start_time, :end_time)
+  end
+
+  def test_params
+    params.permit(:name, :description, :start_time, :end_time)
   end
 end

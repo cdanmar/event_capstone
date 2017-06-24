@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get '/visitors/new' => 'visitors#new'
   post '/visitors' => 'visitors#create'
   get '/visitors/:id' => 'visitors#show'
-  get '/visitors/:id' => 'visitors#show'
   get '/visitors/:id/edit' => 'visitors#edit'
   patch 'visitors/:id' => 'visitors#update'
   delete '/visitors/:id' => 'visitors#destroy'

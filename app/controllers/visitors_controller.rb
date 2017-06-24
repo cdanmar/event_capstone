@@ -33,9 +33,9 @@ class VisitorsController < ApplicationController
 
   def destroy
     visitor = Visitor.find_by(id: params[:id])
-    event.destroy
-    flash[:success] = "Event deleted."
-    redirect_to "/"
+    visitor.destroy
+    flash[:success] = "Visitor deleted."
+    redirect_to "/visitors"
   end
 
 

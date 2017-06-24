@@ -10,15 +10,13 @@ class ParticipantsController < ApplicationController
   end
 
   def create
-    # @listed_participant = ListedParticipant.new(participant_params)
-    @listed_participant = ListedParticipant.new(visitor_id: params[:visitor_id], event_id: params[:event_id])
-    # @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event]["event_id"])
+    @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event]["event_id"])
 
-    p "QQQQQQQQQQQQQQQQQQ"
-    p params[:visitor]
+    # p "QQQQQQQQQQQQQQQQQQ"
+    # p params[:visitor]
 
-    p "WWWWWWWWWWWWWWWWWW"
-    p params[:event_id]
+    # p "WWWWWWWWWWWWWWWWWW"
+    # p params[:event_id]
 
     if @listed_participant.save!
       redirect_to "/participants/index"

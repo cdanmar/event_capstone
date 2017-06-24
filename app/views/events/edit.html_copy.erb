@@ -1,0 +1,22 @@
+<h1>Edit Event</h1>
+<%= form_tag "/events/#{@event.id}", method: :patch do %>
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @event.name %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @event.description %>
+  </div>
+  <div>
+    <%= label_tag :start_time %>
+    <%= datetime_field_tag :start_time, @event.start_time %>
+  </div>
+  <div>
+    <%= label_tag :end_time %>
+    <%= datetime_field_tag :end_time, @event.end_time %>
+  </div>
+  <div>
+    <%= submit_tag "Update Event" %>
+  </div>
+<% end %>
