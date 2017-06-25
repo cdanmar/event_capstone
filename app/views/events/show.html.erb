@@ -1,11 +1,18 @@
 <h1>Event Title: <%= @event.name %></h1>
 <h5>Last Updated: <%= @event.updated_at %></h5>
-<h2>Event Description: <%= @event.description %></h2>
-<h2>Event Start Time: <%= @event.start_time %></h2>
-<h2>Event End Time: <%= @event.end_time %></h2>
+<h3>Event Description: <%= @event.description %></h3>
+<h3>Event Start Time: <%= @event.start_time %></h3>
+<h3>Event End Time: <%= @event.end_time %></h3>
 
 <h1>Current Event Visitors</h1>
-
+<a href="#" class="btn btn-info" role="button">Link Button</a>
+<% Event.find("#{@event.id}").visitors.each do |visitor| %>
+  <div>
+    <h2><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
+    <h3>Visitor Email: <%= visitor.email %></h3>
+    <h3>Visitor Phone: <%= visitor.phone %></h3>
+  </div>
+<% end %>
 
 
 
