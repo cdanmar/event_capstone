@@ -4,8 +4,10 @@
 <h3>Event Start Time: <%= @event.start_time %></h3>
 <h3>Event End Time: <%= @event.end_time %></h3>
 
+<br>
+
 <h1>Current Event Visitors</h1>
-<a href="#" class="btn btn-info" role="button">Link Button</a>
+<a href="/participants/new" class="btn btn-info" role="button">Add visitors</a>
 <% Event.find("#{@event.id}").visitors.each do |visitor| %>
   <div>
     <h2><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
@@ -13,9 +15,6 @@
     <h3>Visitor Phone: <%= visitor.phone %></h3>
   </div>
 <% end %>
-
-
-
-
-<%= link_to "Edit", "/events/#{@event.id}/edit" %>
-<%= link_to "Delete", "/events/#{@event.id}", method: :delete %>
+<br>
+<%= link_to "Edit Event", "/events/#{@event.id}/edit", class: "btn btn-success" %>
+<a href="/participants/new" class="btn btn-danger" role="button">Delete Event</a>

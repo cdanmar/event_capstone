@@ -1,1 +1,18 @@
-edit.html.erb
+<h1>Edit Visitor</h1>
+<%= form_tag "/visitors/#{@visitor.id}", method: :patch do %>
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @visitor.name %>
+  </div>
+  <div>
+    <%= label_tag :email %>
+    <%= email_field_tag :email, @visitor.email %>
+  </div>
+  <div>
+    <%= label_tag :phone %>
+    <%= phone_field_tag :phone, @visitor.phone %>
+  </div>
+  <div>
+    <%= submit_tag "Update visitor" %>
+  </div>
+<% end %>

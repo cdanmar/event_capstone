@@ -1,5 +1,3 @@
-<h1>This section is for testing</h1>
-
 <h1>Event loop test</h1>
 <% Event.find_each do |event| %>
   <div>
@@ -12,7 +10,6 @@
     <h4><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
     <h5>Visitor Email: <%= visitor.email %></h3>
     <h5>Visitor Phone: <%= visitor.phone %></h3>
-    <h5>Checked in Status: <%= ListedParticipant.find("#{visitor.id}").check_in%></h5>
   </div>
 <% end %>
 <br>

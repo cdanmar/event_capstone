@@ -24,7 +24,7 @@ class VisitorsController < ApplicationController
   end
 
   def edit
-    @visitors = Visitor.find_by(id: params[:id])
+    @visitor = Visitor.find_by(id: params[:id])
   end
 
   def update
