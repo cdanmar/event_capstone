@@ -1,16 +1,17 @@
-<h1>Event loop test</h1>
-<% Event.find_each do |event| %>
+<h1>Events and their visitors</h1>
+<br>
+
+
+<% ListedParticipant.all.each do |participant| %>
   <div>
-    <h2><%= link_to "#{event.name}", "/events/#{event.id}" %></h2>
-    <h5>Event start: <%= event.start_time %></h3>
-    <h5>Event finishes: <%= event.end_time %></h3>
+    <h4><%= Event.find("#{participant.event_id}").name%></h4>
+    <h4><%= link_to "#{Event.find("#{participant.event_id}").name}", "/participants/#{participant.event_id}"%></h4>
+    <% Event.find("#{participant.event_id}").visitors.each do |event_visitor|%>
+      <h5><%= event_visitor.name %></h5>
+      <h6>Checked in: <%= participant.check_in %></h6>
+      <h6>Checked out: <%= participant.check_out %></h6>
+    <% end %>
   </div>
-  <% Event.find("#{event.id}").visitors.each do |visitor| %>
-  <div>
-    <h4><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
-    <h5>Visitor Email: <%= visitor.email %></h3>
-    <h5>Visitor Phone: <%= visitor.phone %></h3>
-  </div>
-<% end %>
 <br>
 <% end %>
+
