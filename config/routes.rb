@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   get '/participants/new' => 'participants#new'
   post '/participants' => 'participants#create'
   get '/participants/:id' => 'participants#show'
+  patch '/participants/:id' => 'participants#check_in'
   delete '/participants' => 'participants#destroy'
-  get '/participants' => 'participants#check_in'
-  get '/participants' => 'participants#check_out'
 
   get '/visitors/' => 'visitors#index'
   get '/visitors/new' => 'visitors#new'

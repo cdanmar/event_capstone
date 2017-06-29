@@ -1,1 +1,8 @@
-show.html.erb
+<h3>Testing</h3>
+
+<% if @listed_participant.check_in %>
+  <%= @listed_participant.check_in %>
+<% end %>
+
+<h4> <%= @listed_participant.visitor.name %> </h4>
+<%= button_to "Check In", "/participants/#{@listed_participant.id}", method: :patch %>

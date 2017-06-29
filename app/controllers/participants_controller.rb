@@ -5,9 +5,14 @@ class ParticipantsController < ApplicationController
     @listed_participants = ListedParticipant.all
   end
 
+  def show
+    @listed_participant = ListedParticipant.find(params[:id])
+  end
+
   def new
     @listed_participant = ListedParticipant.new
   end
+
 
   def create
     @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event]["event_id"])
@@ -32,12 +37,18 @@ class ParticipantsController < ApplicationController
   end
 
   def check_in
+    listed_participant = ListedParticipant.find(params[:id])
+    event = listed_participant.event
 
+    if event.start_time < Time.now + 2.hours
+      listed_participant.assign_attributes(check_in: Time.now)
+      listed_participant.save
+    else
+      flash[:warning] = "not time yet"
+    end
+    redirect_to "/participants/#{listed_participant.id}"
   end
 
-  def check_out
-
-  end
 
 # private
 #   def participant_params

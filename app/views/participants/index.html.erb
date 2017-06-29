@@ -1,16 +1,13 @@
-<h1>Events and their visitors</h1>
+<h1>All Visitors</h1>
 <br>
 
 
 <% ListedParticipant.all.each do |participant| %>
   <div>
-    <h4><%= Event.find("#{participant.event_id}").name%></h4>
-    <h4><%= link_to "#{Event.find("#{participant.event_id}").name}", "/participants/#{participant.event_id}"%></h4>
-    <% Event.find("#{participant.event_id}").visitors.each do |event_visitor|%>
-      <h5><%= event_visitor.name %></h5>
-      <h6>Checked in: <%= participant.check_in %></h6>
-      <h6>Checked out: <%= participant.check_out %></h6>
-    <% end %>
+    <h4><% p participant.id %></h4>
+    <h4><%= link_to "#{Visitor.find("#{participant.visitor_id}").name}", "/participants/#{participant.id}"%>, <%= link_to "#{Event.find("#{participant.event_id}").name}", "/events/#{participant.event_id}"%></h4>
+    <h5> Checked in: <%= participant.check_in %></h5>
+    <h5>Checked out: <%= participant.check_out %></h5>
   </div>
 <br>
 <% end %>
