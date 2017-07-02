@@ -1,8 +1,9 @@
-<h3>Testing</h3>
+<h3>Check in</h3>
 
 <% if @listed_participant.check_in %>
-  <%= @listed_participant.check_in %>
+  <h6>Check in time: <%= @listed_participant.check_in %> </h6>
 <% end %>
 
+<h4>  <%= @listed_participant.event.name %> </h4>
 <h4> <%= @listed_participant.visitor.name %> </h4>
 <%= button_to "Check In", "/participants/#{@listed_participant.id}", method: :patch %>
