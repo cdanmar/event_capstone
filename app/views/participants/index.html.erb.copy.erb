@@ -1,0 +1,13 @@
+<h1>Participants Testing</h1>
+<br>
+
+<h1>Some Chart testing:</h1>
+
+<body>
+  <ul class="list-group">
+    <% @listed_participants.each do |x| %>
+      <li class="list-group-item"> <%= Visitor.find(x.visitor_id).name %> </li>
+    <% end %>
+  </ul>
+</body>
+

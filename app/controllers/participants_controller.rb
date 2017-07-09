@@ -3,6 +3,7 @@ class ParticipantsController < ApplicationController
 
   def index
     @listed_participants = ListedParticipant.all
+    @visitors = Visitor.all
   end
 
   def show
@@ -39,6 +40,8 @@ class ParticipantsController < ApplicationController
   def check_in
     listed_participant = ListedParticipant.find(params[:id])
     event = listed_participant.event
+
+    
 
     if event.start_time < Time.now + 2.hours
       listed_participant.assign_attributes(check_in: Time.now)

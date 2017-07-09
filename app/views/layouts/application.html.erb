@@ -6,21 +6,33 @@
   <title>React - Bootstrap Theme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.5/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.5/js/bootstrap-dialog.min.js"></script>
+
   <!-- stylesheets -->
-  <link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
-  <link rel="stylesheet" type="text/css" href="css/vendor/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/compiled/theme.css">
+  <link rel="stylesheet" type="text/css" href="/css/vendor/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/vendor/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
 
   <!-- javascript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-  <script src="js/theme.js"></script>
+ 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  </head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 <body>
-  <header class="navbar navbar-inverse hero" role="banner">
+  <header class="navbar navbar-inverse white" role="banner">
     <div class="container">
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -28,23 +40,25 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="index.html" class="navbar-brand">React</a>
+        <a href="/" class="navbar-brand">Event Capstone</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Home alts <b class="caret"></b>
+              Home alts 
+              <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="index.html">Home 1 (Current)</a></li>
-              <li><a href="index2.html">Home 2 (Slider)</a></li>
+              <li><a href="index.html">Home 1 (Static)</a></li>
+              <li><a href="index2.html">Home 2 (Current)</a></li>
               <li><a href="index3.html">Home 3 (Off-canvas menu)</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Showcase <b class="caret"></b>
+              Showcase 
+              <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a href="features.html">Features</a></li>
@@ -53,7 +67,8 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Pricing <b class="caret"></b>
+              Pricing 
+              <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a href="pricing.html">Pricing charts</a></li>
@@ -62,7 +77,8 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              More pages <b class="caret"></b>
+              More pages 
+              <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a href="aboutus.html">About us</a></li>
@@ -83,7 +99,8 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Blog <b class="caret"></b>
+              Blog 
+              <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a href="blog.html">Blog</a></li>
@@ -92,294 +109,15 @@
               <li><a href="blogpost.html">Blog Post</a></li>
             </ul>
           </li>
+          <li>
+            <a href="signup.html" class="signup visible-md visible-lg">Sign up free</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-
-  <div class="index-hero">
-    <div class="container">
-      <h1 class="hero-text animated fadeInDown">
-        The best interfaces <br />
-        for your web & mobile apps
-      </h1>
-      <p class="sub-text animated fadeInDown">
-        Get a complete existing website with great design up and running in no time for your projects.
-      </p>
-      <div class="cta animated fadeInDown">
-        <a href="features.html" class="button-outline">See the tour</a>
-        <a href="signup.html" class="button">Sign up free</a>
-      </div>
-      <div class="img"></div>
-    </div>
-  </div>
-
-  <div class="features-section">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h2>Need an easy way to customize your site?</h2>
-          <p>React is perfect for novice developers and experts alike.</p>
-        </div>
-      </div>
-      <div class="row feature">
-        <div class="col-md-6 info">
-          <h4>You don't need to have great technical experience to use your product.</h4>
-          <p>
-            Whether you want to fill this paragraph with some text like I'm doing right now, this place
-            is perfect to describe some features or anything you want - React has a complete solution for you.
-          </p>
-        </div>
-        <div class="col-md-6 image">
-          <img src="images/feature1.png" class="img-responsive" alt="feature1" />
-        </div>
-      </div>
-      <div class="divider"></div>
-      <div class="row feature backwards">
-        <div class="col-md-6 info">
-          <h4>A fully featured well design template that works.</h4>
-          <p>
-            You have complete control over the look & feel of your website, we offer the best quality so you
-            take your site up and running in no time.
-          </p>
-          <p>
-            Write some text here to explain the features of your site or application, it
-            has lots of uses.
-          </p>
-        </div>
-        <div class="col-md-6 image">
-          <img src="images/feature2.png" class="img-responsive" alt="feature2" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pricing-dark-section">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h3>Free trial. No contract. Cancel when you want.</h3>
-          <p>All plans include a 7-day free trial</p>
-        </div>
-      </div>
-      <div class="row charts">
-        <div class="col-md-4">
-          <div class="chart first">
-            <div class="quantity">
-              <span class="dollar">$</span>
-              <span class="price">29</span>
-              <span class="period">/month</span>
-            </div>
-            <div class="plan-name">Freelance</div>
-            <div class="specs">
-              <div class="spec">
-                <span class="variable">5</span>
-                team members
-              </div>
-              <div class="spec">
-                <span class="variable">Digital</span>
-                recurring billing
-              </div>
-              <div class="spec">
-                <span class="variable">Virtual</span>
-                online terminal
-              </div>
-              <div class="spec">
-                <span class="variable">10</span>
-                total products
-              </div>
-              <div class="spec">
-                <span class="variable">1.0%</span>
-                Transaction fee
-              </div>
-            </div>
-            <a class="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="chart featured">
-            <div class="popular">Most popular</div>
-            <div class="quantity">
-              <span class="dollar">$</span>
-              <span class="price">79</span>
-              <span class="period">/month</span>
-            </div>
-            <div class="plan-name">Profesional</div>
-            <div class="specs">
-              <div class="spec">
-                <span class="variable">15</span>
-                team members
-              </div>
-              <div class="spec">
-                <span class="variable">Digital</span>
-                recurring billing
-              </div>
-              <div class="spec">
-                <span class="variable">Virtual</span>
-                online terminal
-              </div>
-              <div class="spec">
-                <span class="variable">15</span>
-                total products
-              </div>
-              <div class="spec">
-                <span class="variable">0.5%</span>
-                Transaction fee
-              </div>
-            </div>
-            <a class="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="chart last">
-            <div class="quantity">
-              <span class="dollar">$</span>
-              <span class="price">119</span>
-              <span class="period">/month</span>
-            </div>
-            <div class="plan-name">Premium</div>
-            <div class="specs">
-              <div class="spec">
-                <span class="variable">Unlimited</span>
-                team members
-              </div>
-              <div class="spec">
-                <span class="variable">Digital</span>
-                recurring billing
-              </div>
-              <div class="spec">
-                <span class="variable">Virtual</span>
-                online terminal
-              </div>
-              <div class="spec">
-                <span class="variable">25</span>
-                total products
-              </div>
-              <div class="spec">
-                <span class="variable">No</span>
-                Transaction fee
-              </div>
-            </div>
-            <a class="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="slider-section">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h3>Includes all pages that a complete theme should have</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 slide-wrapper">
-          <div class="slideshow">
-            <div class="btn-nav prev"></div>
-            <div class="btn-nav next"></div>
-            <div class="slide active">
-              <img src="images/slider/slide3.png" alt="slide3" />
-            </div>
-            <div class="slide">
-              <img src="images/slider/slide4.png" alt="slide4" />
-            </div>
-            <div class="slide">
-              <img src="images/slider/slide1.png" alt="slide1" />
-            </div>
-            <div class="slide">
-              <img src="images/slider/slide5.png" alt="slide5" />
-            </div>
-            <div class="slide">
-              <img src="images/slider/slide2.png" alt="slide2" />
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-
-  <div class="testimonials-section">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h3>Trusted by a lot businesses around the world:</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="testimonial pull-right">
-            <div class="quote">
-              I am just quoting some stuff but I am seriously happy about this product. Has a lot of powerful
-              features and is so easy to set up, I could stay customizing it day and night, it's just so much fun!
-              <div class="arrow-down">
-                <div class="arrow"></div>
-                <div class="arrow-border"></div>
-              </div>
-            </div>
-            <div class="author">
-              <img src="images/testimonials/testimonial3.jpg" class="pic" alt="testimonial3" />
-              <div class="name">John McClane</div>
-              <div class="company">Microsoft</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="testimonial">
-            <div class="quote">
-              This thing is one of those tools that everybody should be using. I really like it and with this ease to use, you can kickstart your projects and apps and just focus on your business!
-              <div class="arrow-down">
-                <div class="arrow"></div>
-                <div class="arrow-border"></div>
-              </div>
-            </div>
-            <div class="author">
-              <img src="images/testimonials/testimonial2.jpg" class="pic" alt="testimonial2" />
-              <div class="name">Karen Jones</div>
-              <div class="company">Pixar Co.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <p>
-      Start your free 14 day trial! 
-    </p>
-    <a href="signup.html">
-      Sign up for free
-    </a>
-  </div>
-
-  <div class="clients-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Our Customers</h3>
-          <p>
-            These are some of our customers who have helped us by using our product.
-          </p>
-          <div class="logos">
-            <img src="images/logos/google.png">
-            <img src="images/logos/facebook.png">
-            <img src="images/logos/apple.png">
-            <img src="images/logos/stripe.png">
-            <img src="images/logos/yahoo.png">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
+  <%= yield %>
   <div class="main-footer main-footer--white">
     <div class="container">
       <div class="row">
@@ -468,5 +206,108 @@
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    $(function () {
+      var $navDots = $("#slider nav a")
+      var $next = $(".slide-nav.next");
+      var $prev = $(".slide-nav.prev");
+      var $slides = $("#slider .slides .slide");
+      var actualIndex = 0;
+      var swiping = false;
+      var interval;
+
+      $navDots.click(function (e) {
+        e.preventDefault();
+        if (swiping) { return; }
+        swiping = true;
+
+        actualIndex = $navDots.index(this);
+        updateSlides(actualIndex);
+      });
+
+      $next.click(function (e) {
+        e.preventDefault();
+        if (swiping) { return; }
+        swiping = true;
+
+        clearInterval(interval);
+        interval = null;
+
+        actualIndex++;
+        if (actualIndex >= $slides.length) {
+          actualIndex = 0;
+        }
+
+        updateSlides(actualIndex);
+      });
+
+      $prev.click(function (e) {
+        e.preventDefault();
+        if (swiping) { return; }
+        swiping = true;
+
+        clearInterval(interval);
+        interval = null;
+
+        actualIndex--;
+        if (actualIndex < 0) {
+          actualIndex = $slides.length - 1;
+        }
+
+        updateSlides(actualIndex);
+      });
+
+      function updateSlides(index) {
+        // update nav dots
+        $navDots.removeClass("active");
+        $navDots.eq(index).addClass("active");
+
+        // update slides
+        var $activeSlide = $("#slider .slide.active");
+        var $nextSlide = $slides.eq(index);
+
+        $activeSlide.fadeOut();
+        $nextSlide.addClass("next").fadeIn();
+        
+        setTimeout(function () {
+          $slides.removeClass("next").removeClass("active");
+          $nextSlide.addClass("active");
+          $activeSlide.removeAttr('style');
+          swiping = false;
+        }, 1000);
+      }
+
+      interval = setInterval(function () {
+        if (swiping) { return; }
+        swiping = true;
+
+        actualIndex++;
+        if (actualIndex >= $slides.length) {
+          actualIndex = 0;
+        }
+
+        updateSlides(actualIndex);
+      }, 5000);
+
+      // demo player
+      var $videoModal = $(".video-modal");
+      $("#demo-player").click(function () {
+        $videoModal.toggleClass("active");
+        clearInterval(interval);
+        interval = null;
+      });
+      $videoModal.click(function () {
+        $videoModal.removeClass("active");
+        setTimeout(function () {
+          $videoModal.find(".wrap").html('<iframe src="https://player.vimeo.com/video/22439234" width="620" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        }, 1000);
+      })
+      $videoModal.find(".wrap").click(function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
 </body>
 </html>

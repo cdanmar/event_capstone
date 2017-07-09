@@ -13,7 +13,7 @@
             </span>
             <div class="status">
               <div class="color green"></div>
-              Event Participants
+              All sistems operational
             </div>
             <div class="help">
               Need help? <a href="contactus.html">Contact us</a>.
@@ -21,28 +21,30 @@
           </div>
         </div>
       </div>
-
-
-
-
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default modules">
             <ul class="list-group">
-              <% @listed_participants.each do |x| %>
               <li class="list-group-item">
-                <%= @visitors.find(x.visitor_id).name %>
+                Web API
                 <div class="status">Operational</div>
               </li>
-              <% end %>
+              <li class="list-group-item">
+                Notifications
+                <div class="status down">Down</div>
+              </li>
+              <li class="list-group-item">
+                Application Monitoring
+                <div class="status">Operational</div>
+              </li>
+              <li class="list-group-item">
+                Browser Plugin
+                <div class="status">Operational</div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-
-
-
-
     </div>
   </div>
 
