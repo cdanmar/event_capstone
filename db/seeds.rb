@@ -16,12 +16,15 @@ ListedParticipant.create!([
   {visitor_id: 1, event_id: 1, access_level: nil, check_in: nil, check_out: nil},
   {visitor_id: 1, event_id: 8, access_level: nil, check_in: nil, check_out: nil},
   {visitor_id: 2, event_id: 2, access_level: nil, check_in: "2017-06-29 02:27:26", check_out: nil},
-  {visitor_id: 1, event_id: 10, access_level: nil, check_in: "2017-07-02 19:35:35", check_out: nil}
+  {visitor_id: 1, event_id: 10, access_level: nil, check_in: "2017-07-02 19:35:35", check_out: nil},
+  {visitor_id: 2, event_id: 10, access_level: nil, check_in: "2017-07-06 18:26:21", check_out: nil},
+  {visitor_id: 7, event_id: 10, access_level: nil, check_in: "2017-07-06 18:37:59", check_out: nil}
 ])
 Visitor.create!([
   {name: "Carlos Martinez", email: "cdanmar@spamify.me", phone: "555-555-5555", identifier_key: nil},
   {name: "Visitor 2", email: "visitor2@visitor.com", phone: "555-555-5556", identifier_key: nil},
   {name: "Mr. Potato Judge", email: "judge@potato.com", phone: "555-555-7777", identifier_key: nil},
   {name: "Engie FidgetMaker", email: "efig@spamify.me", phone: "555-555-8888", identifier_key: nil},
-  {name: "Joe FidgetVisit", email: "jfidget@spamify.me", phone: "555-555-999", identifier_key: nil}
+  {name: "Joe FidgetVisit", email: "jfidget@spamify.me", phone: "555-555-999", identifier_key: nil},
+  {name: "Visitor 3", email: "", phone: "555-555-9999", identifier_key: nil}
 ])

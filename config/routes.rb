@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
 
+
   get '/participants/index' => 'participants#index'
   get '/participants/new' => 'participants#new'
   post '/participants' => 'participants#create'

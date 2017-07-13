@@ -13,6 +13,10 @@
     <%= phone_field_tag :phone, @visitor.phone %>
   </div>
   <div>
+    <%= label_tag :identifier_key %>
+    <%= text_field_tag :identifier_key, @visitor.identifier_key %>
+  </div>
+  <div>
     <%= submit_tag "Update visitor" %>
   </div>
 <% end %>

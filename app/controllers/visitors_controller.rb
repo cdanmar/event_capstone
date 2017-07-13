@@ -28,6 +28,11 @@ class VisitorsController < ApplicationController
   end
 
   def update
+    visitor = Visitor.find_by(id: params[:id])
+    visitor.assign_attributes(name: params[:name], email: params[:email], phone: params[:phone], identifier_key: params[:identifier_key])
+    visitor.save
+    flash[:success] = "Event Updated"
+    redirect_to "/visitors/#{visitor.id}"
 
   end
 
@@ -42,6 +47,6 @@ class VisitorsController < ApplicationController
 
 private 
   def visitor_params
-    params.require(:visitor).permit(:name, :email, :phone)
+    params.require(:visitor).permit(:name, :email, :phone, :identifier_key)
   end
 end
