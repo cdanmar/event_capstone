@@ -1,8 +1,51 @@
-<h1>Your events</h1>
-<% @events.each do |event| %>
-  <div>
-    <h2><%= link_to "#{event.name}", "/events/#{event.id}" %></h2>
-    <h3>Event start: <%= event.start_time %></h3>
-    <h3>Event finishes: <%= event.end_time %></h3>
+  <div class="blog-cols-header">
+    <div class="container">
+      <h1>
+        Event Index
+      </h1>
+      <p>
+        An overview of all events and their start times
+      </p>
+    </div>
   </div>
-<% end %>
+
+
+
+
+  <div class="blog-cols-wrapper">
+    <div class="container">
+
+
+      <% @events.each do |event| %>
+        <a href=<%="/events/#{event.id}"%> class="card">
+          <div class="card-wrapper">
+            <div class="card-bg" style="background-image: url('images/bgs/photo-1478059425650-ca13d6d422f4.jpeg');">
+            </div>
+            <div class="card-intro">
+              <div class="card-title">
+                <%= "#{event.name}" %>
+              </div>
+              <div class="card-min-read">
+                Event start: <%= event.start_time %>
+              </div>
+              <p class="card-description">
+                React has both a web app and an android app to make your website easy and always available.
+              </p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+
+    </div>
+  </div>
+
+
+
+
+
+  <nav class="blog-pager">
+    <ul class="pager">
+      <li><a href="#">&larr; Previous</a></li>
+      <li><a href="#">Next &rarr;</a></li>
+    </ul>
+  </nav>
