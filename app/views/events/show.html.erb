@@ -1,20 +1,153 @@
-<h1>Event Title: <%= @event.name %></h1>
-<h5>Last Updated: <%= @event.updated_at %></h5>
-<h3>Event Description: <%= @event.description %></h3>
-<h3>Event Start Time: <%= @event.start_time %></h3>
-<h3>Event End Time: <%= @event.end_time %></h3>
 
-<br>
 
-<h1>Current Event Visitors</h1>
-<a href="/participants/new" class="btn btn-info" role="button">Add visitors</a>
-<% Event.find("#{@event.id}").visitors.each do |visitor| %>
-  <div>
-    <h2><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
-    <h3>Visitor Email: <%= visitor.email %></h3>
-    <h3>Visitor Phone: <%= visitor.phone %></h3>
+<body>
+
+  <div class="about-us-slider">
+    <div class="container">
+      <div class="row header">
+        <div class="col-md-12">
+          <h3><%= @event.name %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img src="/images/office2.png" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-<br>
-<%= link_to "Edit Event", "/events/#{@event.id}/edit", class: "btn btn-success" %>
-<a href="/participants/new" class="btn btn-danger" role="button">Delete Event</a>
+
+  <div class="about-us-team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Event Description</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">          
+          <p>
+            <%= @event.description %>
+          </p>
+        </div>
+        <div class="col-md-12">
+          <h5>Event Details</h5>
+          <p>
+            <h6>Start Time</h6>
+            <div>
+              <%= @event.start_time.strftime("%B %e, %Y") %>
+            </div>
+            <div>
+              <%= @event.start_time.strftime("%l:%M %p") %>
+            </div>
+          </p>
+          <%= link_to "Edit Event", "/events/#{@event.id}/edit", class: "btn btn-success" %>
+          <%= link_to "Delete", "/events/#{@event.id}", method: :delete, class: "btn btn-danger" %>
+        </div>
+      </div>
+
+      <div class="row team">
+        
+
+
+      <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>
+                  Event Participants 
+                </h4>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="col-xs-8">Name</th><th class="col-xs-2">Check in status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @event.visitors.each do |visitor|%>
+                <% check_in_status = ListedParticipant.find_by(visitor_id: visitor.id, event_id: @event.id).check_in %>
+
+                  <tr>
+                    <td class="col-xs-8"><%= visitor.name %></td><td class="col-xs-2"> <%= check_in_status %> </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+              <div>
+                
+              
+              <!-- Button trigger modal -->
+              <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Add Visitors to this Event
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Add Visitor</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                      <div class="field form-group">
+                      <%= form_tag '/participants', method: :post do %>
+                        <div class="form-group">
+                          Select Visitor to add them: <%= collection_select :visitor, :visitor_id, Visitor.all, :id, :name, {}, class: "form-control" %>
+                        </div>
+                        <div>
+                          <%= hidden_field_tag :event_id, @event.id %>
+                        </div>
+                      <div>
+                        
+                      </div>
+
+
+                      <input type="submit" value="Add Visitor">
+                      <% end %>
+
+
+
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+
+
+              </div>
+        </div>
+      </div>
+
+
+    
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    $(function() {
+      $('.flexslider').flexslider({
+        directionNav: false,
+        slideshowSpeed: 4000
+      });
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+</body>
+</html>

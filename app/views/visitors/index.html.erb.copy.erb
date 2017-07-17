@@ -1,0 +1,8 @@
+<h1>Visitors</h1>
+<% @visitors.each do |visitor| %>
+  <div>
+    <h2><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
+    <h3>Visitor Email: <%= visitor.email %></h3>
+    <h3>Visitor Phone: <%= visitor.phone %></h3>
+  </div>
+<% end %>

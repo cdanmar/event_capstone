@@ -17,6 +17,21 @@ class ParticipantsController < ApplicationController
 
 
   def create
+
+    if params.has_key?(:identifier_key)
+      check_in(params[:identifier_key])
+    else
+      @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event_id])
+
+
+
+      if @listed_participant.save!
+        redirect_to "/participants/index"
+      else
+        @listed_participant.errors.full_messages
+        redirect_to "/participants/index"
+      end
+    end
     # @listed_participant = ListedParticipant.new(visitor_id: params[:visitor]["visitor_id"], event_id: params[:event]["event_id"])
 
     # # p "QQQQQQQQQQQQQQQQQQ"
@@ -31,7 +46,6 @@ class ParticipantsController < ApplicationController
     #   @listed_participant.errors.full_messages
     #   redirect_to "/participants/index"
     # 
-    check_in(params[:identifier_key])
 
   end
 

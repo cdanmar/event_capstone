@@ -1,13 +1,14 @@
-  <div class="blog-cols-header">
+  <div class="pricing-dark-section">
     <div class="container">
-      <h1>
-        Event Index
-      </h1>
-      <p>
-        An overview of all events and their start times
-      </p>
-    </div>
+      <div class="row header">
+        <h3>Free trial. No contract. Cancel when you want.</h3>
+        <p>All plans include a 7-day free trial</p>
+      </div>
   </div>
+
+
+
+ 
 
 
 
@@ -25,11 +26,13 @@
               <div class="card-title">
                 <%= "#{event.name}" %>
               </div>
-              <div class="card-min-read">
-                Event start: <%= event.start_time %>
+              <div class="card-min-read" >
+              <br>
+                Event start: <%= event.start_time.strftime("%B %e, %Y") %>
               </div>
-              <p class="card-description">
-                React has both a web app and an android app to make your website easy and always available.
+
+              <p class="card-description" style="overflow-y: scroll; height:400px;"" >
+                <%= event.description %>
               </p>
             </div>
           </div>

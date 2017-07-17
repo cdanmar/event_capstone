@@ -1,8 +1,28 @@
-<h1>Visitors</h1>
-<% @visitors.each do |visitor| %>
-  <div>
-    <h2><%= link_to "#{visitor.name}", "/visitors/#{visitor.id}" %></h2>
-    <h3>Visitor Email: <%= visitor.email %></h3>
-    <h3>Visitor Phone: <%= visitor.phone %></h3>
+  <div class="status-page">
+    <div class="container">
+      <div class="row header">
+        <h3>Current Visitors</h3>
+        <p>A quick summary of all visitors</p>
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default modules">
+            <ul class="list-group">
+              <% @visitors.each do |visitor| %>
+              <li class="list-group-item">
+                  <%= visitor.name%>
+                <div class="status">
+
+                  <%= link_to "Delete", "/visitors/#{visitor.id}", {method: :delete, class: "btn btn-danger" }%>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
   </div>
-<% end %>
