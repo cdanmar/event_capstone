@@ -1,43 +1,51 @@
-  <div class="pricing-dark-section">
-    <div class="container">
-      <div class="row header">
-        <h3>Free trial. No contract. Cancel when you want.</h3>
-        <p>All plans include a 7-day free trial</p>
+  
+
+  <div id="outer" style="width:100%">
+    <div id="inner">
+      <h1>
+        Event Index
+      </h1>
+    </div>
+    <div id="inner">
+      <p>
+        An overview of all events and their start times
+      </p>
+    </div>
+    <div id="inner">
+      <div class="cta animated fadeInDown">
+        <a href="events/new" class="button">Add Events</a>
+        <a href="visitors" class="button">Manage Visitors</a>
       </div>
+    </div>
   </div>
-
-
-
- 
 
 
 
 
   <div class="blog-cols-wrapper">
-    <div class="container">
+    <div class="photo-container">
 
-
-      <% @events.each do |event| %>
-        <a href=<%="/events/#{event.id}"%> class="card">
-          <div class="card-wrapper">
-            <div class="card-bg" style="background-image: url('images/bgs/photo-1478059425650-ca13d6d422f4.jpeg');">
-            </div>
-            <div class="card-intro">
-              <div class="card-title">
-                <%= "#{event.name}" %>
+        <% @events.each do |event| %>
+          <a href=<%="/events/#{event.id}"%> class="card">
+            <div class="card-wrapper">
+              <div class="card-bg" style="background-image: url('images/bgs/photo-1478059425650-ca13d6d422f4.jpeg');">
               </div>
-              <div class="card-min-read" >
-              <br>
-                Event start: <%= event.start_time.strftime("%B %e, %Y") %>
-              </div>
+              <div class="card-intro">
+                <div class="card-title">
+                  <%= "#{event.name}" %>
+                </div>
+                <div class="card-min-read" >
+                <br>
+                  Event start: <%= event.start_time.strftime("%B %e, %Y") %>
+                </div>
 
-              <p class="card-description" style="overflow-y: scroll; height:400px;"" >
-                <%= event.description %>
-              </p>
+                <p class="card-description" style="overflow-y: scroll; height:400px;"" >
+                  <%= event.description %>
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-      <% end %>
+          </a>
+        <% end %>
 
     </div>
   </div>

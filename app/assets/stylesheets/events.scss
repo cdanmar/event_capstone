@@ -1,7 +1,18 @@
-// body {
-//     background: url('design_background_8.jpg') no-repeat center center fixed;
-// }
+body {
+    background: url('1.png');
+}
 
+.photo-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: 16%;
+}
+
+#inner {
+  display: table;
+  margin: 0 auto;
+}
 .table-fixed thead {
   width: 97%;
 }
