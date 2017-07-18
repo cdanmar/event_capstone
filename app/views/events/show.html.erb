@@ -54,7 +54,7 @@
                 <% check_in_status = visitor.listed_participants.find_by(event_id: @event.id, visitor_id: visitor.id).check_in %>
 
                   <tr>
-                    <td class="col-xs-8"><%= visitor.name %></td><td class="col-xs-2"> <%= check_in_status %> </td>
+                    <td class="col-xs-8"><%= link_to visitor.name, "/visitors/#{visitor.id}" %></td><td class="col-xs-2"> <%= check_in_status %> </td>
                   </tr>
                 <% end %>
                 </tbody>

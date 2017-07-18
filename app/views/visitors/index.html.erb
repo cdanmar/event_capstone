@@ -14,7 +14,8 @@
             <ul class="list-group">
               <% @visitors.each do |visitor| %>
               <li class="list-group-item">
-                  <%= visitor.name%>
+                  <%= link_to visitor.name, "visitors/#{visitor.id}" %>
+
                 <div class="status">
 
                   <%= link_to "Delete", "/visitors/#{visitor.id}", {method: :delete, class: "btn btn-danger" }%>
@@ -23,6 +24,9 @@
               <% end %>
             </ul>
           </div>
+          <a href="visitors/new" class="button">Add Visitors</a>
+
+
         </div>
       </div>
   </div>
